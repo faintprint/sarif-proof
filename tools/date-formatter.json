@@ -10,6 +10,9 @@
   "registry_tier": "unverified",
   "is_signed": false,
   "transport": "stdio",
+
+
+
   "tools": [
     {
       "name": "format_date",

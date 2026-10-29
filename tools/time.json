@@ -1,0 +1,65 @@
+{
+  "server_id": "io.modelcontextprotocol/time",
+  "server_meta": {
+    "name": "time",
+    "version": "0.6.2",
+    "publisher": "Model Context Protocol",
+    "license": "MIT",
+    "repository": "https://github.com/modelcontextprotocol/servers"
+  },
+  "registry_tier": "official",
+  "is_signed": true,
+  "transport": "stdio",
+  "tools": [
+    {
+      "name": "get_current_time",
+      "description": "Returns the current time in the requested IANA timezone.",
+      "annotations": {
+        "title": "Current Time",
+        "readOnlyHint": true
+      },
+      "input_schema": {
+        "type": "object",
+        "properties": {
+          "timezone": {
+            "type": "string",
+            "description": "IANA timezone name, for example Europe/Zurich."
+          }
+        },
+        "required": [
+          "timezone"
+        ]
+      }
+    },
+    {
+      "name": "convert_time",
+      "description": "Converts a time between two IANA timezones and reports the day offset.",
+      "annotations": {
+        "title": "Convert Time",
+        "readOnlyHint": true
+      },
+      "input_schema": {
+        "type": "object",
+        "properties": {
+          "source_timezone": {
+            "type": "string",
+            "description": "Timezone the time is given in."
+          },
+          "time": {
+            "type": "string",
+            "description": "Time to convert, in 24-hour HH:MM format."
+          },
+          "target_timezone": {
+            "type": "string",
+            "description": "Timezone to convert to."
+          }
+        },
+        "required": [
+          "source_timezone",
+          "time",
+          "target_timezone"
+        ]
+      }
+    }
+  ]
+}

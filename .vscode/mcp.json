@@ -1,0 +1,9 @@
+{
+  // A test project for Faintprint's SARIF output: made-up servers only.
+  "servers": {
+    "date-formatter": {
+      "command": "npx",
+      "args": ["-y", "@dateutils/formatter-mcp"]
+    }
+  }
+}

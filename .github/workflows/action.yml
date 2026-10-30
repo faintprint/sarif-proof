@@ -1,0 +1,43 @@
+# The Faintprint Action 1.1.0 with upload-sarif, run by hand.
+name: action
+on:
+  workflow_dispatch:
+permissions:
+  contents: read
+  actions: read
+  security-events: write
+jobs:
+  attack:
+    runs-on: ubuntu-24.04
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+      - uses: faintprint/scan-action@bb73ce4eecc71ba690e4276df60bed4f907d1f0a # v1.1.0
+        with:
+          scan: action/mcp.json
+          tools: p01=action/p01-tools.json
+          upload-sarif: true
+          deploy-user: ${{ secrets.FAINTPRINT_USER }}
+          deploy-token: ${{ secrets.FAINTPRINT_TOKEN }}
+  clean:
+    runs-on: ubuntu-24.04
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+      - uses: faintprint/scan-action@v1
+        with:
+          scan: tools/time.json
+          upload-sarif: true
+          deploy-user: ${{ secrets.FAINTPRINT_USER }}
+          deploy-token: ${{ secrets.FAINTPRINT_TOKEN }}
+  no-permission:
+    runs-on: ubuntu-24.04
+    permissions:
+      contents: read
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+      - uses: faintprint/scan-action@bb73ce4eecc71ba690e4276df60bed4f907d1f0a # v1.1.0
+        with:
+          scan: tools/time.json
+          upload-sarif: true
+          reports: no-permission-reports
+          deploy-user: ${{ secrets.FAINTPRINT_USER }}
+          deploy-token: ${{ secrets.FAINTPRINT_TOKEN }}

@@ -1,0 +1,29 @@
+# The Faintprint Action 1.2.0 (Faintprint 0.4.0), run by hand. Each job keeps
+# its reports under its own name.
+name: action 1.2.0
+on:
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  attack:
+    runs-on: ubuntu-24.04
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+      - uses: faintprint/scan-action@a838515aaaa3492d8df05cfd937c458d533820e5 # v1.2.0
+        with:
+          scan: action/mcp.json
+          tools: p01=action/p01-tools.json
+          reports: attack-reports
+          deploy-user: ${{ secrets.FAINTPRINT_USER }}
+          deploy-token: ${{ secrets.FAINTPRINT_TOKEN }}
+  clean:
+    runs-on: ubuntu-24.04
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+      - uses: faintprint/scan-action@a838515aaaa3492d8df05cfd937c458d533820e5 # v1.2.0
+        with:
+          scan: tools/time.json
+          reports: clean-reports
+          deploy-user: ${{ secrets.FAINTPRINT_USER }}
+          deploy-token: ${{ secrets.FAINTPRINT_TOKEN }}

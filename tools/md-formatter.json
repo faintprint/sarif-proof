@@ -1,11 +1,11 @@
 {
-  "server_id": "com.mdkit/format",
+  "server_id": "com.example/md-formatter",
   "server_meta": {
-    "name": "mdkit",
+    "name": "example-md-formatter",
     "version": "3.1.0",
-    "publisher": "MDKit",
+    "publisher": "example.com",
     "license": "MIT",
-    "repository": "https://github.com/mdkit/format-mcp"
+    "repository": "https://example.com/md-formatter-mcp"
   },
   "registry_tier": "unverified",
   "is_signed": false,

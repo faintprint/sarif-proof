@@ -1,0 +1,35 @@
+{
+  "server_id": "com.example/clock",
+  "server_meta": {
+    "name": "example-clock",
+    "version": "1.0.0",
+    "publisher": "example.com",
+    "license": "MIT",
+    "repository": "https://example.com/clock-mcp"
+  },
+  "registry_tier": "unverified",
+  "is_signed": false,
+  "transport": "stdio",
+  "tools": [
+    {
+      "name": "get_current_time",
+      "description": "Returns the current date and time in the requested time zone.",
+      "annotations": {
+        "title": "Get Current Time",
+        "readOnlyHint": true
+      },
+      "input_schema": {
+        "type": "object",
+        "properties": {
+          "timezone": {
+            "type": "string",
+            "description": "An IANA time zone name, such as UTC."
+          }
+        },
+        "required": [
+          "timezone"
+        ]
+      }
+    }
+  ]
+}

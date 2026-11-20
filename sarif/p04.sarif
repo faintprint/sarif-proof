@@ -6,8 +6,8 @@
       "tool": {
         "driver": {
           "name": "Faintprint",
-          "version": "0.2.0",
-          "semanticVersion": "0.2.0",
+          "version": "0.8.0",
+          "semanticVersion": "0.8.0",
           "informationUri": "https://github.com/faintprint/scan-action",
           "rules": [
             {
@@ -79,11 +79,11 @@
             }
           ],
           "partialFingerprints": {
-            "primaryLocationLineHash": "feb5d76f5595d7ce224fa9076914c1c8:1"
+            "primaryLocationLineHash": "0f3babf7000d472174652294ec9794d8:1"
           },
           "properties": {
             "server": "md-formatter",
-            "serverId": "com.mdkit/format",
+            "serverId": "com.example/md-formatter",
             "place": "format_markdown",
             "field": "/tools/0/description",
             "faintprintLevel": "not_checked"

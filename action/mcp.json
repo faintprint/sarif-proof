@@ -2,8 +2,7 @@
   // The Action proof: one made-up local server, given its saved tool list.
   "servers": {
     "p01": {
-      "command": "npx",
-      "args": ["-y", "@dateutils/formatter-mcp"]
+      "command": "example-date-formatter"
     }
   }
 }

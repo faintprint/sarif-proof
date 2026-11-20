@@ -6,8 +6,8 @@
       "tool": {
         "driver": {
           "name": "Faintprint",
-          "version": "0.2.0",
-          "semanticVersion": "0.2.0",
+          "version": "0.8.0",
+          "semanticVersion": "0.8.0",
           "informationUri": "https://github.com/faintprint/scan-action",
           "rules": []
         }

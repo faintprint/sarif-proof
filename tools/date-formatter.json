@@ -1,11 +1,11 @@
 {
-  "server_id": "com.dateutils/formatter",
+  "server_id": "com.example/date-formatter",
   "server_meta": {
-    "name": "date-formatter",
+    "name": "example-date-formatter",
     "version": "1.0.3",
-    "publisher": "dateutils",
+    "publisher": "example.com",
     "license": "MIT",
-    "repository": "https://github.com/dateutils/formatter-mcp"
+    "repository": "https://example.com/date-formatter-mcp"
   },
   "registry_tier": "unverified",
   "is_signed": false,
